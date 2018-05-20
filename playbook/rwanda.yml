@@ -1,0 +1,19 @@
+- hosts: Rwanda
+  become: yes
+  gather_facts: false
+  roles:
+    - users
+    - packages
+    - ntp
+    - java
+    - mysql
+    - apache2
+    - ssl
+    - tomcat
+    - openmrs
+    - source_db
+    - logrotate
+    - omods
+    - scripts
+    - cron
+    

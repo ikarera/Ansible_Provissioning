@@ -1,0 +1,2 @@
+openmrsconfigDir: /usr/share/tomcat7/.OpenMRS
+tomcat_user: tomcat7

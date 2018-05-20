@@ -1,0 +1,11 @@
+---
+- name: Install logrotate
+  package:
+    name: logrotate
+    state: present
+  when: logrotate_scripts is defined and logrotate_scripts|length > 0
+
+- name: install tomcat7 logrotate
+  template:
+    src: tomcat7.j2
+    dest: "{{ logrotate_conf_dir }}/tomcat7"

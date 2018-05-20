@@ -1,0 +1,4 @@
+tomcatHome: /usr/share/tomcat7
+tomcatVersion: tomcat7
+tomcatCatalinaBase: /var/lib/tomcat7
+tomcatInit: /etc/init.d

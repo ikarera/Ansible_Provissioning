@@ -1,0 +1,3 @@
+- name: OPENMRS | Install all the dependency omods
+  unarchive: src=../files/modules.zip dest={{openmrsconfigDir}} owner={{tomcat_user}} group={{tomcat_user}}
+

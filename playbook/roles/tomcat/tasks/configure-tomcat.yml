@@ -1,0 +1,29 @@
+#
+# Configure Tomcat
+#
+- name: Tomcat | Configure tomcat-users.xml
+  template: 
+    src: tomcat-users.xml.j2 
+    dest: "{{ tomcatCatalinaBase }}/conf/tomcat-users.xml"
+    mode: 0755
+    owner: "{{ tomcatVersion }}"
+  notify: restart tomcat
+
+- name: Tomcat | Copy tomcat7 to init.d folder 
+  template:
+    src: tomcat_init.j2
+    dest: "{{ tomcatInit }}/tomcat7"
+    owner: root
+    mode: 0755
+  notify: restart tomcat
+
+#- name: Configure "server.xml"
+#  template:
+#    src: server.xml.j2
+#    dest: "{{ tomcatCatalinaBase }}/conf/server.xml"
+#    owner: "{{ tomcatVersion }}"
+#    mode: 0600
+#  notify: restart tomcat
+
+- name: enable tomcat service
+  action: service name=tomcat7 state=started enabled=yes

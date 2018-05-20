@@ -1,0 +1,2 @@
+- name: Source database
+  shell: sh +x /tmp/sourcedb.sh

@@ -1,0 +1,6 @@
+- name: Install Tomcat
+  sudo: True
+  apt: name={{ item }} state=installed update_cache=yes
+  with_items:
+      - tomcat7
+      - tomcat7-user
